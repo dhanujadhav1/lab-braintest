@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.String;
+
 
 @WebServlet(urlPatterns= {"/personality"})
 public class PersonalityViewController extends HttpServlet {
@@ -17,6 +19,8 @@ public class PersonalityViewController extends HttpServlet {
 
     public PersonalityViewController() {
         super();
+        PersonalityCalculator obj=new PersonalityCalculator();
+       String message= obj.findYourBrainType(options);
         
     }
 
@@ -34,7 +38,7 @@ public class PersonalityViewController extends HttpServlet {
 		
 		System.out.println(options);
 				
-		/* 
+		
 
 		request.setAttribute("message", message);
 		
@@ -53,7 +57,7 @@ public class PersonalityViewController extends HttpServlet {
 				rd.forward(request, response);
 			}
 		
-		}*/
+		}
 		}
 	}
 
